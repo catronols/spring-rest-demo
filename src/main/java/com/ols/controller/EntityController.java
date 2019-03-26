@@ -3,6 +3,7 @@ package com.ols.controller;
 import com.ols.data.entities.EntityImpl;
 import com.ols.data.repositories.EntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -14,6 +15,7 @@ public class EntityController {
   @Autowired
   private EntityRepository entityRepository;
 
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
   @RequestMapping(path = "", method = RequestMethod.POST)
   @ResponseBody public EntityImpl newEntity(@Valid @RequestBody EntityImpl entity) {
 
@@ -29,6 +31,7 @@ public class EntityController {
 
   }
 
+  // TODO: 2019-03-26 CustomPermissionEvaluator
   @RequestMapping(path = "/{id}", method = RequestMethod.PUT)
   @ResponseBody public EntityImpl updateEntity(@PathVariable long id,
                                            @Valid @RequestBody EntityImpl entity) {

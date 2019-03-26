@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
 //	compile 'org.keycloak:keycloak-spring-security-adapter:2.5.5.Final'
-	compile group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '3.1.0.Final'
+	compile group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '5.0.0'
 
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-security'

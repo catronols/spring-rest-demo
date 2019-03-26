@@ -1,0 +1,5 @@
+{
+  "clientId": "api-switch-iso",
+  "enabled": true,
+  "bearerOnly": true
+}
